@@ -16,7 +16,7 @@ import 'primeicons/primeicons.css';
 const App = () => {
   return (
     <PrimeReactProvider>
-      <BrowserRouter basename="/preEntrega1ArielSuarez">
+      <BrowserRouter basename="/Cell-Store-Ariel-Suarez">
         <NavBar />
         <Routes>
   <Route path="/" element={<ItemListContainer greeting="¡Bienvenido a nuestra tienda!" />} />

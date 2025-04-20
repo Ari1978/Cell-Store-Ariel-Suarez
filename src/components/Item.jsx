@@ -1,7 +1,6 @@
 
 import React from 'react';
 import { Card } from 'primereact/card'; 
-import ItemCount from './ItemCount';
 import { Button } from 'primereact/button'; 
 import { Link } from 'react-router-dom';
 
