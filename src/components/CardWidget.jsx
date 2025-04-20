@@ -1,5 +1,5 @@
 import React from "react";
-import { ShoppingCartOutlined } from "@ant-design/icons";
+import { ShoppingCartOutlined } from "@ant-design/icons"
 
 const CardWidget = () => {
     
@@ -11,4 +11,4 @@ const CardWidget = () => {
   )
 }
 
-export default CardWidget
+export default CardWidget;

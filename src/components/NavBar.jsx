@@ -2,6 +2,7 @@ import React from "react";
 import { Menu } from "antd";
 import { AndroidFilled, AppleFilled, UsbFilled } from "@ant-design/icons";
 import CardWidget from "./CardWidget";
+import { Link } from "react-router-dom";
 import "./stylo.css";
 
 const NavBar = () => {
@@ -13,7 +14,7 @@ const NavBar = () => {
       children: [
         { key: "and-1", label: "Motorola" },
         { key: "and-2", label: "Redmi" },
-        { key: "and-3", label: "Samsung" },
+        { key: "and-3", label: <Link to="/samsung">Samsung</Link>},
         { key: "and-4", label: "Xiomi" },
       ],
     },
@@ -41,9 +42,14 @@ const NavBar = () => {
 
   return (
     <div className="navbar">
-      <span className="navbar-titulo">Cell Store</span>
+      <Link className="navbar-titulo" to={"/"}>
+        <span >Cell Store</span>
+      </Link>
       <Menu mode="horizontal" className="menu" items={items} />
+      <Link to={"/cart"}>
       <CardWidget className= "car"/>
+      </Link>
+      
     </div>
   );
 };
