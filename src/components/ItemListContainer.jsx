@@ -1,10 +1,14 @@
-import React from 'react';
 import './stylo.css';
 import Componente1 from './Componente1';
 import NavBar from './NavBar';
 
+
 const ItemListContainer = ({ greeting }) => {
-  return (
+
+  
+  
+   
+   return (
     <div className="container">
       <p className="parrafo">{greeting}</p>
       <NavBar />

@@ -46,9 +46,7 @@ const NavBar = () => {
         <span >Cell Store</span>
       </Link>
       <Menu mode="horizontal" className="menu" items={items} />
-      <Link to={"/cart"}>
       <CardWidget className= "car"/>
-      </Link>
       
     </div>
   );

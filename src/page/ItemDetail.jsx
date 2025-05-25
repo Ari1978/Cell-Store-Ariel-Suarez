@@ -1,27 +1,41 @@
-import React from 'react';
 import { useParams } from 'react-router-dom';
-import { Card } from 'primereact/card';
-import ItemCount from '../components/ItemCount';
+import { useContext } from 'react';
+import { CartContext } from '../context/ShoppingCartContext';
 import productsData from '../data/products';
+import ItemCount from '../components/ItemCount';
 
 const ItemDetail = () => {
   const { id } = useParams();
-  const product = productsData.find(p => p.id === parseInt(id));
+  const { cart, setCart } = useContext(CartContext);
 
-  if (!product) {
-    return <p>Producto no encontrado...</p>;
-  }
+  const product = productsData.find(p => p.id === parseInt(id));
+  if (!product) return <p>Producto no encontrado</p>;
+
+  const agregarAlCarrito = (cantidad) => {
+    const existe = cart.find(item => item.id === product.id);
+    if (existe) {
+      setCart(
+        cart.map(item =>
+          item.id === product.id
+            ? { ...item, quantity: item.quantity + cantidad }
+            : item
+        )
+      );
+    } else {
+      setCart([...cart, { ...product, quantity: cantidad }]);
+    }
+  };
 
   return (
-    <Card className='card-detail' title={product.name}>
-      <img src={product.image} alt={product.name} style={{ width: '200px' }} />
-      <p className='detalle'>{product.description}</p>
+    <div>
+      <h2>{product.name}</h2>
+      <img src={product.image} alt={product.name} />
+      <p>{product.description}</p>
       <p>Precio: ${product.price}</p>
-      <p>Stock disponible: {product.stock}</p>
-      <ItemCount />
-    </Card>
+      <p>Stock: {product.stock}</p>
+      <ItemCount alAgregar={agregarAlCarrito} />
+    </div>
   );
 };
 
 export default ItemDetail;
-

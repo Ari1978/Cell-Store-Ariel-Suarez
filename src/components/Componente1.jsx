@@ -12,17 +12,13 @@ const Componente1 = () => {
           resolve(productsData);
         }, 3000);
       } else {
-        reject("No se pueden mostrar los productos");
+        reject('No se pueden mostrar los productos');
       }
     });
 
     showProducts
-      .then((result) => {
-        setProducts(result);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+      .then(result => setProducts(result))
+      .catch(error => console.error(error));
   }, []);
 
   return (
