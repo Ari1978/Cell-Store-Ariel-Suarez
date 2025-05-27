@@ -1,15 +1,28 @@
-import productsData from '../data/productsData';
-import ProductList from '../components/ProductList';
+import React from "react";
+import products from "../data/products";
+import Item from "../components/Item";
+import './stylo.css';
 
-const Readmi = () => {
-  const readmis = productsData.filter(product => product.category === 'Readmi');
+const Redmi = () => {
+  // Filtrar productos cuya marca sea Redmi
+  const productosRedmi = products.filter(
+    product => product.marca?.toLowerCase() === "redmi"
+  );
 
   return (
     <div>
-      <h2>Readmi</h2>
-      <ProductList products={readmis} />
+      <h1>Productos Redmi</h1>
+      {productosRedmi.length > 0 ? (
+        <div className="item-list">
+          {productosRedmi.map(product => (
+            <Item key={product.id} product={product} />
+          ))}
+        </div>
+      ) : (
+        <p>No hay productos Redmi para mostrar.</p>
+      )}
     </div>
   );
 };
 
-export default Readmi;
+export default Redmi;

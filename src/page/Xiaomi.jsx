@@ -1,13 +1,25 @@
-import productsData from '../data/productsData';
-import ProductList from '../components/ProductList';
+import products from "../data/products";
+import Item from "../components/Item";
+import './stylo.css';
 
 const Xiaomi = () => {
-  const xiaomis = productsData.filter(product => product.name.toLowerCase().includes('xiaomi'));
+  // Filtrar productos cuya marca sea Xiaomi
+  const productosXiaomi = products.filter(
+    product => product.marca?.toLowerCase() === "xiaomi"
+  );
 
   return (
     <div>
-      <h2>Xiaomi</h2>
-      <ProductList products={xiaomis} />
+      <h1>Productos Xiaomi</h1>
+      {productosXiaomi.length > 0 ? (
+        <div className="item-list">
+          {productosXiaomi.map(product => (
+            <Item key={product.id} product={product} />
+          ))}
+        </div>
+      ) : (
+        <p>No hay productos Xiaomi para mostrar.</p>
+      )}
     </div>
   );
 };
