@@ -1,27 +1,12 @@
-import { useContext } from 'react';
+
 import { Card } from 'primereact/card'; 
 import { Link } from 'react-router-dom';
 import { Button } from 'primereact/button'; 
-import { CartContext } from '../context/ShoppingCartContext';
-import ItemCount from './ItemCount';
+import './stylo.css';
 
 const Item = ({ product }) => {
-  const { cart, setCart } = useContext(CartContext);
-
-  const agregarAlCarrito = (cantidad) => {
-    
-    const existe = cart.find(item => item.id === product.id);
-    if (existe) {
-      setCart(cart.map(item =>
-        item.id === product.id
-          ? { ...item, quantity: item.quantity + cantidad }
-          : item
-      ));
-    } else {
-      setCart([...cart, { ...product, quantity: cantidad }]);
-    }
-  };
-
+  
+  
 
   return (
     
@@ -34,7 +19,7 @@ const Item = ({ product }) => {
           <Button label="Detalles" rounded />
         </Link>
       </div>
-      <ItemCount alAgregar={agregarAlCarrito} />
+      
     </Card>
   );
 };

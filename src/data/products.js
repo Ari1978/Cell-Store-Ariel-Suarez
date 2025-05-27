@@ -51,6 +51,15 @@ const productsData = [
     stock: 5,
     category: "Smartphone",
   },
+  {
+    id: 6,
+    name: "Xiaomi 14 Ultra",
+    image: "https://http2.mlstatic.com/D_NQ_NP_946588-MLA74053924551_012024-O.webp",
+    description: "Procesador: Snapdragon® 8 Gen 3, Almacenamiento y RAM: 16 GB + 512 GBRAM LPDDR5X de 8533 Mbps y almacenamiento UFS 4.0, Pantalla líquida integral: AMOLED WQHD+ de 6,73 3200 x 1440, 522 ppp, Cámara principal: Leica LYT-90050 MP, Cámara con tele objetivo flotante Leica de: 75 mm50 MPf/1,8, Cámara de periscopio Leica de 120 mm50 MPf/2,5, Cámara Leica ultra gran angular de 12 mm50 MPCampo de visión de 122°, Cámara selfie en pantalla de 32 MPf/2,0Tamaño del sensor de 1/3,14, Campo de visión de 90°, Batería de 5000 mAh (typ)",
+    price: 2958000,
+    stock: 5,
+    category: "Smartphone",
+  },
 ];
 
 export default productsData;

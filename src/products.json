@@ -1,0 +1,45 @@
+[
+  { 
+      "id": 1, 
+    "nombre": "Samsung S24", 
+    "descripcion": "Teléfono Inteligente", 
+    "stock": 15 
+  },
+
+  { 
+    "id": 2,
+      "nombre": "Motorola G24", 
+    "descripcion": "Teléfono Inteligente", 
+    "stock": 30 
+  },
+
+  { 
+    "id": 3,
+    "nombre": "Xiaomi Note 12", 
+    "descripcion": "Teléfono Inteligente", 
+    "stock": 20 
+  },
+
+  { 
+    "id": 4,
+    "nombre": "Samsung S22", 
+    "descripcion": "Teléfono Inteligente", 
+    "stock": 18 
+  },
+   
+  { "id": 5,
+    "nombre": "", 
+    "descripcion": "Teléfono Inteligente", 
+    "stock": 20 
+  },
+
+  { 
+    "id": 6,
+    "nombre": "Xiaomi Note 12", 
+    "descripcion": "Teléfono Inteligente", 
+    "stock": 20 
+  }
+
+  ]
+  
+

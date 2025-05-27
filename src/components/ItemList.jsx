@@ -1,8 +1,16 @@
 import React from "react";
-import Item from './Item';
+import Item from '../components/Item';
 import './stylo.css';
 
-const ItemList = ({ products }) => {
+
+
+export const ItemList = ({products}) => {
+ 
+  
+  if (!products || products.length === 0) {
+    return <p>No hay productos para mostrar.</p>;
+  }
+
   return (
     <div className="item-list">
       {products.map(product => (
@@ -12,4 +20,4 @@ const ItemList = ({ products }) => {
   );
 };
 
-export default React.memo (ItemList);
+export default React.memo(ItemList);
