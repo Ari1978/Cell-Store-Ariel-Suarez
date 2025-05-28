@@ -4,6 +4,7 @@ import productsData from '../data/products';
 
 const Componente1 = () => {
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true); 
 
   useEffect(() => {
     const showProducts = new Promise((resolve, reject) => {
@@ -18,12 +19,13 @@ const Componente1 = () => {
 
     showProducts
       .then(result => setProducts(result))
-      .catch(error => console.error(error));
+      .catch(error => console.error(error))
+      .finally(() => setLoading(false)); 
   }, []);
 
   return (
     <div>
-      <ItemList products={products} />
+      <ItemList products={products} loading={loading} />
     </div>
   );
 };

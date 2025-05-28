@@ -237,3 +237,27 @@ p{
   background: linear-gradient(90deg, #2563eb 60%, #14b8a6 100%);
   transform: translateY(-2px) scale(1.025);
 }
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 250px; /* espacio vertical para centrar */
+  background-color: var(--surface-card); /* usa la variable de tema si usas PrimeReact */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 250px;
+  color: var(--text-color-secondary);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  user-select: none;
+}
+
+.loading-text {
+  margin-top: 16px;
+  font-size: 1rem;
+  color: #555;
+  font-weight: 500;
+}

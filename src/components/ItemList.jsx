@@ -13,12 +13,12 @@ const agruparPorMarca = (productos) => {
   }, {});
 };
 
-const ItemList = ({ products }) => {
-  if (!products || products.length === 0) {
+const ItemList = ({ products, loading }) => {
+  if (!loading && (!products || products.length === 0)) {
     return <p>No hay productos para mostrar.</p>;
   }
 
-  const productosAgrupados = agruparPorMarca(products);
+  const productosAgrupados = agruparPorMarca(products || []);
 
   return (
     <div>

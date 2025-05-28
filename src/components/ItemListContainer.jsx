@@ -1,7 +1,8 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import productsData from "../data/products";
-import ItemList from "./ItemList";
+import Componente1 from "./Componente1";
+import Loading from "./Loading";
 
 const ItemListContainer = ({ greeting }) => {
   const [products, setProducts] = useState([]);
@@ -39,7 +40,7 @@ const ItemListContainer = ({ greeting }) => {
   return (
     <div className="container">
       <p className="parrafo">{greeting}</p>
-      {loading ? <p>Cargando productos...</p> : <ItemList products={products} />}
+      {loading ? <Loading /> : <Componente1 products={products} />}
     </div>
   );
 };
