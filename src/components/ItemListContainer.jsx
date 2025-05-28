@@ -40,9 +40,10 @@ const ItemListContainer = ({ greeting }) => {
   return (
     <div className="container">
       <p className="parrafo">{greeting}</p>
-      {loading ? <Loading /> : <Componente1 products={products} />}
+      {loading ? <Loading /> : <Componente1 products={products} loading={loading} />}
     </div>
   );
 };
 
 export default ItemListContainer;
+

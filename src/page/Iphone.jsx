@@ -3,7 +3,7 @@ import Item from "../components/Item";
 import './stylo.css';
 
 const Iphone = () => {
-  // Filtrar productos de la marca Apple
+  
   const productosApple = products.filter(
     product => product.marca?.toLowerCase() === "apple"
   );
