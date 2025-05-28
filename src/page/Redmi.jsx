@@ -4,7 +4,7 @@ import Item from "../components/Item";
 import './stylo.css';
 
 const Redmi = () => {
-  // Filtrar productos cuya marca sea Redmi
+  
   const productosRedmi = products.filter(
     product => product.marca?.toLowerCase() === "redmi"
   );

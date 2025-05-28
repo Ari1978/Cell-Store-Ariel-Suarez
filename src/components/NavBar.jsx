@@ -14,7 +14,7 @@ const NavBar = () => {
         { key: "and-1", label: <Link to="/marca/motorola">Motorola</Link> },
         { key: "and-2", label: <Link to="/marca/redmi">Redmi</Link> },
         { key: "and-3", label: <Link to="/marca/samsung">Samsung</Link> },
-        { key: "and-4", label: <Link to="/marca/xiaomi">Xiaomi</Link> },  // corregí aquí el texto y la url
+        { key: "and-4", label: <Link to="/marca/xiaomi">Xiaomi</Link> }, 
       ],
     },
     {

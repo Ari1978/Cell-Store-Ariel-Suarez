@@ -3,7 +3,7 @@ import Item from "../components/Item";
 import './stylo.css';
 
 const Xiaomi = () => {
-  // Filtrar productos cuya marca sea Xiaomi
+  
   const productosXiaomi = products.filter(
     product => product.marca?.toLowerCase() === "xiaomi"
   );

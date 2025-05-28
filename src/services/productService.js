@@ -1,9 +1,8 @@
 import { getFirestore, collection, getDocs, query, where, doc, getDoc } from "firebase/firestore";
 
-/**
- * Obtiene todos los productos, opcionalmente filtrados por categoría.
- * @param {string|null} category - Categoría para filtrar, o null para todos.
- */
+
+
+
 export const getProducts = async (category = null) => {
     try {
         const db = getFirestore();

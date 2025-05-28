@@ -2,7 +2,7 @@ import productsData from '../data/productsData';
 import ProductList from '../components/ProductList';
 
 const Accesorios = () => {
-  // Ajusta la categoría según tus datos
+ 
   const accesorios = productsData.filter(product => product.category === 'Accesorios');
 
   return (

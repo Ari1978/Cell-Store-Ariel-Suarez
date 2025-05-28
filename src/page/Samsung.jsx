@@ -3,7 +3,7 @@ import Item from "../components/Item";
 import './stylo.css';
 
 const Samsung = () => {
-  // Filtrar productos de marca Samsung
+  
   const productosSamsung = products.filter(
     product => product.marca && product.marca.toLowerCase() === "samsung"
   );
