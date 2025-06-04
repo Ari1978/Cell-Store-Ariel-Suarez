@@ -1,21 +1,31 @@
-import products from "../data/products"; // Asegúrate que esta ruta es correcta
+import { useEffect, useState } from "react";
+import { getProducts } from "../services/productService"; 
 import Item from "../components/Item";
 import './stylo.css';
 
 const Samsung = () => {
-  
-  const productosSamsung = products.filter(
-    product => product.marca && product.marca.toLowerCase() === "samsung"
-  );
+  const [productosSamsung, setProductosSamsung] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  console.log("Samsung filtrados:", productosSamsung);
+  useEffect(() => {
+    getProducts("samsung")
+      .then((productosFiltrados) => {
+        setProductosSamsung(productosFiltrados);
+      })
+      .catch((error) => {
+        console.error("Error al cargar productos Samsung:", error);
+      })
+      .finally(() => setLoading(false));
+  }, []);
 
   return (
     <div>
       <h1>Productos Samsung</h1>
-      {productosSamsung.length > 0 ? (
+      {loading ? (
+        <p>Cargando productos...</p>
+      ) : productosSamsung.length > 0 ? (
         <div className="item-list">
-          {productosSamsung.map(product => (
+          {productosSamsung.map((product) => (
             <Item key={product.id} product={product} />
           ))}
         </div>
@@ -27,4 +37,3 @@ const Samsung = () => {
 };
 
 export default Samsung;
-

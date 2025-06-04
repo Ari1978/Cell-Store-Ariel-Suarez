@@ -1,15 +1,19 @@
 import { getFirestore, collection, getDocs, query, where, doc, getDoc } from "firebase/firestore";
 
-
-
-
-export const getProducts = async (category = null) => {
+export const getProducts = async (marca = null) => {
     try {
         const db = getFirestore();
         const productsCollection = collection(db, "Celulares");
         let q;
-        if (category) {
-            q = query(productsCollection, where("category", "==", category));
+
+        if (marca) {
+            if (Array.isArray(marca)) {
+                // Filtrar por varias marcas con "in"
+                q = query(productsCollection, where("marca", "in", marca));
+            } else {
+                // Filtrar por una sola marca
+                q = query(productsCollection, where("marca", "==", marca));
+            }
         } else {
             q = productsCollection;
         }
@@ -28,7 +32,6 @@ export const getProducts = async (category = null) => {
     }
 };
 
-
 export const getProductById = async (id) => {
     try {
         const db = getFirestore();
@@ -45,4 +48,3 @@ export const getProductById = async (id) => {
         throw error;
     }
 };
-

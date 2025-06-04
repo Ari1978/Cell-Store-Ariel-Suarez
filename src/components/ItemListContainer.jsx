@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import productsData from "../data/products";
+import { getProducts } from "../services/productService"; // Asegurate que este import sea correcto
 import Componente1 from "./Componente1";
 import Loading from "./Loading";
 
@@ -11,28 +11,22 @@ const ItemListContainer = ({ greeting }) => {
 
   useEffect(() => {
     setLoading(true);
-    const showProducts = new Promise((resolve, reject) => {
-      if (productsData.length > 0) {
-        setTimeout(() => {
-          resolve(productsData);
-        }, 1000);
-      } else {
-        reject("No se pueden mostrar los productos");
+
+    const showProducts = new Promise(async (resolve, reject) => {
+      try {
+        const data = await getProducts(marca);
+        if (data.length > 0) {
+          setTimeout(() => resolve(data), 800); // Simula un delay como antes
+        } else {
+          reject(new Error("No se encontraron productos"));
+        }
+      } catch (error) {
+        reject(error);
       }
     });
 
     showProducts
-      .then((data) => {
-        if (marca) {
-          setProducts(
-            data.filter(
-              (p) => p.marca && p.marca.toLowerCase() === marca.toLowerCase()
-            )
-          );
-        } else {
-          setProducts(data);
-        }
-      })
+      .then((data) => setProducts(data))
       .catch((err) => alert(err.message))
       .finally(() => setLoading(false));
   }, [marca]);
@@ -46,4 +40,3 @@ const ItemListContainer = ({ greeting }) => {
 };
 
 export default ItemListContainer;
-

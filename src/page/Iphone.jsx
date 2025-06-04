@@ -1,27 +1,39 @@
-import products from "../data/products";
+import { useEffect, useState } from "react";
+import { getProducts } from "../services/productService"; 
 import Item from "../components/Item";
 import './stylo.css';
 
-const Iphone = () => {
-  
-  const productosApple = products.filter(
-    product => product.marca?.toLowerCase() === "apple"
-  );
+const Apple = () => {
+  const [productosApple, setProductosApple] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    getProducts("apple")
+      .then((productosFiltrados) => {
+        setProductosApple(productosFiltrados);
+      })
+      .catch((error) => {
+        console.error("Error al cargar productos Apple:", error);
+      })
+      .finally(() => setLoading(false));
+  }, []);
 
   return (
     <div>
-      <h1>Productos iPhone</h1>
-      {productosApple.length > 0 ? (
+      <h1>Productos Apple</h1>
+      {loading ? (
+        <p>Cargando productos...</p>
+      ) : productosApple.length > 0 ? (
         <div className="item-list">
-          {productosApple.map(product => (
+          {productosApple.map((product) => (
             <Item key={product.id} product={product} />
           ))}
         </div>
       ) : (
-        <p>No hay productos iPhone para mostrar.</p>
+        <p>No hay productos Apple para mostrar.</p>
       )}
     </div>
   );
 };
 
-export default Iphone;
+export default Apple;

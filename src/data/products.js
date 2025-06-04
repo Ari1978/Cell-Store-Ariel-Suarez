@@ -231,7 +231,7 @@ const productsData = [
     marca: "Motorola",
     image: "https://http2.mlstatic.com/D_NQ_NP_844351-MLA81161775331_122024-O.webp",
     description:
-    "El Moto Edge 50 Pro ofrece una experiencia premium con su pantalla pOLED de 6.7 pulgadas, resolución Full HD+ y tasa de refresco de 144Hz. Equipado con un potente procesador Snapdragon 7 Gen 3, 12 GB de RAM y carga rápida TurboPower de 125W. Su cámara principal de 50 MP con enfoque láser garantiza fotos impresionantes en cualquier situación. Ideal para usuarios exigentes que buscan potencia y diseño elegante.",  
+    "Smar",  
     price: 1049999,
     stock: 21,
     category: "Smartphone",
@@ -240,7 +240,7 @@ const productsData = [
     id: 22,
     name: "Audifonos JBL Tune 720",
     marca: "Auriculares",
-    image: "https://http2.mlstatic.com/D_NQ_NP_816116-MLU73465844524_122023-O.webp",
+    image: "descrip",
     description:
     "Los audífonos JBL Tune 720BT ofrecen sonido Pure Bass JBL de alta calidad con conectividad Bluetooth 5.3 para una experiencia inalámbrica estable. Cuentan con hasta 76 horas de reproducción y carga rápida para disfrutar más música con menos espera. Su diseño liviano y almohadillas acolchadas garantizan comodidad durante todo el día, ideal para uso diario o viajes largos.",  
     price: 102374,
@@ -262,7 +262,7 @@ const productsData = [
     id: 24,
     name: "Auriculares In Ear Indy",
     marca: "Auriculares",
-    image: "https://http2.mlstatic.com/D_NQ_NP_845544-MLU70062818117_062023-O.webp",
+    image: "descripcion",
     description:
     "Auriculares inalámbricos In Ear con diseño compacto y ergonómico para máxima comodidad. Equipados con tecnología Bluetooth 5.0 para una conexión estable y rápida, ofrecen sonido nítido y graves profundos. Cuentan con micrófono integrado para llamadas manos libres y controles táctiles para reproducir música, ajustar volumen y atender llamadas fácilmente. Batería de larga duración con estuche de carga portátil, ideal para usar todo el día sin interrupciones.",  
     price: 169955,

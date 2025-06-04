@@ -19,13 +19,11 @@ const NavBar = () => {
     },
     {
       key: "ipho",
-      label: "Apple",
+      label: "IOS",
       icon: <AppleFilled />,
       children: [
-        { key: "ipho-1", label: <Link to="/marca/iphone16">iPhon 16</Link> },
-       { key: "ipho-2", label: <Link to="/marca/iphone15">iPhone 15</Link> },
-        { key: "ipho-3", label: <Link to="/marca/iphone14">iPhone 14</Link> },
-        { key: "ipho-4", label: <Link to="/marca/iphone13">iPhone 13</Link> },
+        { key: "ipho-1", label: <Link to="/marca/Apple">Apple</Link> },
+       
       ],
     },
     {
@@ -33,8 +31,8 @@ const NavBar = () => {
       label: "Accesorios",
       icon: <UsbFilled />,
       children: [
-        { key: "acces-1", label: <Link to="/marca/fundas">Fundas</Link> },
-        { key: "acces-2", label: <Link to="/marca/auriculares">Auriculares</Link> },
+        { key: "acces-1", label: <Link to="/marca/accesorios">Fundas y Audio </Link> },
+       
       ],
     },
   ];

@@ -1,26 +1,33 @@
 import { useParams } from 'react-router-dom';
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { CartContext } from '../context/ShoppingCartContext';
-import products from '../data/products';
+import { getProductById } from '../services/productService';
 import ItemCount from '../components/ItemCount';
 
 const ItemDetail = () => {
   const { id } = useParams();
   const { agregarAlCarrito } = useContext(CartContext);
+  const [product, setProduct] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-  const product = products.find(p => p.id === Number(id));
-  if (!product) return <p>Producto no encontrado</p>;
+  useEffect(() => {
+    getProductById(id)
+      .then(producto => setProduct(producto))
+      .catch(err => console.error(err))
+      .finally(() => setLoading(false));
+  }, [id]);
 
-  // Esta función solo llama a la del contexto
   const handleAgregar = (cantidad) => {
-    console.log("Producto recibido por alAgregar:", product);
-    console.log("Cantidad recibida por alAgregar:", cantidad);
-    agregarAlCarrito(product, cantidad);
+    if (product) {
+      agregarAlCarrito(product, cantidad);
+    }
   };
 
+  if (loading) return <p>Cargando producto...</p>;
+  if (!product) return <p>Producto no encontrado</p>;
+
   return (
-    <>
-      <div className='card-detail'>
+    <div className='card-detail'>
       <h2>{product.name}</h2>
       <img src={product.image} alt={product.name} />
       <p>{product.description}</p>
@@ -28,8 +35,6 @@ const ItemDetail = () => {
       <p>Stock: {product.stock}</p>
       <ItemCount alAgregar={handleAgregar} />
     </div>
-    </>
-
   );
 };
 
