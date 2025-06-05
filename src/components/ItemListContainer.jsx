@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { getProducts } from "../services/productService"; // Asegurate que este import sea correcto
+import { getProducts } from "../services/productService";
 import Componente1 from "./Componente1";
 import Loading from "./Loading";
 
@@ -16,7 +16,7 @@ const ItemListContainer = ({ greeting }) => {
       try {
         const data = await getProducts(marca);
         if (data.length > 0) {
-          setTimeout(() => resolve(data), 800); // Simula un delay como antes
+          setTimeout(() => resolve(data), 800); 
         } else {
           reject(new Error("No se encontraron productos"));
         }
